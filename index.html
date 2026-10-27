@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة تقدير وتفوق - Pearson BTEC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary-gold: #c59b27;
+            --secondary-gold: #e5c158;
+            --dark-blue: #0f172a;
+            --border-color: #c59b27;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f1f5f9;
+            padding: 30px 0;
+        }
+        
+        .certificate-container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate-border {
+            border: 3px solid var(--border-color);
+            padding: 30px;
+            position: relative;
+            background: radial-gradient(circle, #ffffff 85%, #fffdf5 100%);
+            transition: border-color 0.3s ease;
+        }
+        
+        .certificate-inner-border {
+            border: 1px solid var(--border-color);
+            padding: 35px 25px;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            font-size: 1.4rem;
+            color: var(--border-color);
+            line-height: 1;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+        
+        .top-left {
+            top: 6px;
+            left: 6px;
+        }
+        
+        .top-right {
+            top: 6px;
+            right: 6px;
+        }
+        
+        .bottom-left {
+            bottom: 6px;
+            left: 6px;
+        }
+        
+        .bottom-right {
+            bottom: 6px;
+            right: 6px;
+        }
+        
+        .certificate-header {
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .cert-title {
+            font-family: 'Amiri', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        
+        .cert-subtitle {
+            color: var(--border-color);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .student-input-section {
+            text-align: center;
+            margin: 20px 0 25px 0;
+        }
+        
+        .student-name-display {
+            font-family: 'Amiri', serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            padding: 0 35px 5px 35px;
+            min-width: 300px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .cert-body {
+            text-align: center;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #334155;
+            margin-bottom: 25px;
+        }
+        
+        .target-box {
+            background-color: #fefce8;
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 15px auto;
+            max-width: 720px;
+            font-size: 1.05rem;
+            color: #713f12;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+        
+        .en-text {
+            display: block;
+            direction: ltr;
+            unicode-bidi: embed;
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            margin-top: 4px;
+            color: #854d0e;
+        }
+        
+        .grade-badge-container {
+            text-align: center;
+            margin: 20px 0 10px 0;
+        }
+        
+        .cert-footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+        
+        .signature-title {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        .signature-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+        }
+        
+        .seal-badge {
+            width: 65px;
+            height: 65px;
+            background: var(--border-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            font-size: 1.4rem;
+            border: 2px solid #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .certificate-container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- شريط أدوات التحكم والخيارات -->
+    <div class="container no-print mb-4" style="max-width: 900px;">
+        <div class="card p-3 shadow-sm border-0">
+            <div class="row g-3">
+
+                <!-- اسم الطالبة -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">اسم الطالبة:</label>
+                    <input type="text" class="form-control" id="studentNameInput" placeholder="اكتب اسم الطالبة..." value="اسم الطالبة" oninput="updateCertificate()">
+                </div>
+
+                <!-- اختيار الهدف التعليمي -->
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">هدف التعلم (Learning Aim):</label>
+                    <select class="form-select" id="aimSelect" onchange="updateCertificate()">
+                        <option value="A" selected>أ) فهم دور البيانات والمعلومات في المؤسسات</option>
+                        <option value="B">ب) إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات</option>
+                        <option value="C">ج) راجع فعالية لوحة المعلومات لتوفير المعلومات</option>
+                    </select>
+                </div>
+
+                <!-- اختيار الصفة (مدرس / معلمة) -->
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">صفة المقدم:</label>
+                    <select class="form-select" id="roleSelect" onchange="updateCertificate()">
+                        <option value="مدرس المادة" selected>مدرس المادة</option>
+                        <option value="معلمة المادة">معلمة المادة</option>
+                    </select>
+                </div>
+
+                <!-- اسم المدرس/المعلمة -->
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">اسم المدرس / المعلمة:</label>
+                    <input type="text" class="form-control" id="teacherNameInput" placeholder="اكتب الاسم هنا..." value="المهندس إبراهيم المدادحه" oninput="updateCertificate()">
+                </div>
+
+                <!-- اختيار الدرجة المعيارية -->
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">الدرجة والمعيار:</label>
+                    <select class="form-select" id="gradeSelect" onchange="updateCertificate()">
+                        <option value="D" selected>D - امتياز (Distinction)</option>
+                        <option value="M">M - تفوق (Merit)</option>
+                        <option value="P">P - نجاح (Pass)</option>
+                        <option value="U">U - راسب (Unclassified)</option>
+                    </select>
+                </div>
+
+                <!-- اختيار لون الإطار -->
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">لون الإطار والتزيين:</label>
+                    <div class="d-flex align-items-center gap-2">
+                        <input type="color" class="form-control form-control-color w-100" id="borderColorInput" value="#c59b27" title="اختر لون الإطار" onchange="updateCertificate()">
+                    </div>
+                </div>
+
+                <!-- زر الطباعة -->
+                <div class="col-12 text-end mt-3">
+                    <button onclick="window.print()" class="btn btn-success btn-lg fw-bold px-4">
+                        طباعة / حفظ PDF
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- قالب الشهادة -->
+    <div class="certificate-container">
+        <div class="certificate-border" id="certBorder">
+            <div class="certificate-inner-border">
+
+                <!-- الزخارف الركنية -->
+                <div class="corner-decoration top-left">❖</div>
+                <div class="corner-decoration top-right">❖</div>
+                <div class="corner-decoration bottom-left">❖</div>
+                <div class="corner-decoration bottom-right">❖</div>
+
+                <!-- Header -->
+                <div class="certificate-header">
+                    <h1 class="cert-title">شهادة تقدير وتفوق</h1>
+                    <p class="cert-subtitle mb-0">CERTIFICATE OF EXCELLENCE</p>
+                </div>
+
+                <!-- Content -->
+                <div class="cert-body">
+                    <p class="mb-1">تُمنح هذه الشهادة ببالغ الفخر والاعتزاز للطالبة المتميزة:</p>
+
+                    <div class="student-input-section">
+                        <span class="student-name-display" id="displayName">اسم الطالبة</span>
+                    </div>
+
+                    <p class="mb-2">
+                        تقديراً لجهودها الاستثنائية وتفوقها واجتيازها بنجاح واقتدار لكافة متطلبات المهمة لـ:
+                    </p>
+
+                    <!-- صندوق الهدف التعليمي -->
+                    <div class="target-box">
+                        <strong class="fw-bold" id="targetTitle">هدف التعلم (أ) - Learning Aim A</strong>
+                        <div class="mt-1" id="targetDescAr">فهم دور البيانات والمعلومات في المؤسسات</div>
+                        <span class="en-text" id="targetDescEn">(Understand how data and information are used by organisations)</span>
+                    </div>
+
+                    <p class="mb-0">
+                        متمنين لها دوام التوفيق والتميز العلمي والمهني.
+                    </p>
+
+                    <!-- شارة الدرجة والمعيار -->
+                    <div class="grade-badge-container">
+                        <span id="gradeBadge" class="badge fs-6 px-4 py-2 bg-warning text-dark fw-bold">
+                            التقدير: امتياز (D - Distinction)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Footer & Signatures -->
+                <div class="cert-footer">
+                    <div class="row align-items-center text-center">
+
+                        <div class="col-4">
+                            <p class="signature-title mb-1" id="displayRoleHeader">مقدمة من مدرس المادة</p>
+                            <p class="signature-name mb-0" id="displayTeacherName">المهندس إبراهيم المدادحه</p>
+                            <small class="text-muted">BTEC Instructor</small>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="seal-badge">
+                                ❖
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <p class="signature-title mb-1">التاريخ</p>
+                            <p class="signature-name mb-0" id="currentDate"></p>
+                            <small class="text-muted">BTEC IT Department</small>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const aimData = {
+            "A": {
+                title: "هدف التعلم (أ) - Learning Aim A",
+                ar: "فهم دور البيانات والمعلومات في المؤسسات",
+                en: "(Understand how data and information are used by organisations)"
+            },
+            "B": {
+                title: "هدف التعلم (ب) - Learning Aim B",
+                ar: "إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات",
+                en: "(Create a dashboard using data processing techniques)"
+            },
+            "C": {
+                title: "هدف التعلم (ج) - Learning Aim C",
+                ar: "راجع فعالية لوحة المعلومات لتوفير المعلومات",
+                en: "(Review the effectiveness of the dashboard in providing information)"
+            }
+        };
+
+        function updateCertificate() {
+            // 1. تحديث اسم الطالبة
+            let nameInput = document.getElementById('studentNameInput').value;
+            document.getElementById('displayName').innerText = nameInput.trim() !== "" ? nameInput : "اسم الطالبة";
+
+            // 2. تحديث الهدف التعليمي
+            let selectedAim = document.getElementById('aimSelect').value;
+            document.getElementById('targetTitle').innerText = aimData[selectedAim].title;
+            document.getElementById('targetDescAr').innerText = aimData[selectedAim].ar;
+            document.getElementById('targetDescEn').innerText = aimData[selectedAim].en;
+
+            // 3. تحديث الصفة واسم المدرس/المعلمة
+            let roleSelect = document.getElementById('roleSelect').value;
+            document.getElementById('displayRoleHeader').innerText = "مقدمة من " + roleSelect;
+
+            let teacherInput = document.getElementById('teacherNameInput').value;
+            document.getElementById('displayTeacherName').innerText = teacherInput.trim() !== "" ? teacherInput : "الاسم";
+
+            // 4. تحديث الدرجة المعيارية (D / M / P / U)
+            let gradeSelect = document.getElementById('gradeSelect').value;
+            let badge = document.getElementById('gradeBadge');
+
+            if (gradeSelect === 'D') {
+                badge.className = 'badge fs-6 px-4 py-2 bg-warning text-dark fw-bold';
+                badge.innerText = 'التقدير: امتياز (D - Distinction)';
+            } else if (gradeSelect === 'M') {
+                badge.className = 'badge fs-6 px-4 py-2 bg-primary text-white fw-bold';
+                badge.innerText = 'التقدير: تفوق (M - Merit)';
+            } else if (gradeSelect === 'P') {
+                badge.className = 'badge fs-6 px-4 py-2 bg-success text-white fw-bold';
+                badge.innerText = 'التقدير: نجاح (P - Pass)';
+            } else if (gradeSelect === 'U') {
+                badge.className = 'badge fs-6 px-4 py-2 bg-danger text-white fw-bold';
+                badge.innerText = 'التقدير: راسب (U - Unclassified)';
+            }
+
+            // 5. تحديث لون الإطار والعناصر التزيينية
+            let selectedColor = document.getElementById('borderColorInput').value;
+            document.documentElement.style.setProperty('--border-color', selectedColor);
+        }
+
+        // كتابة التاريخ تلقائياً
+        let today = new Date();
+        let day = String(today.getDate()).padStart(2, '0');
+        let month = String(today.getMonth() + 1).padStart(2, '0');
+        let year = today.getFullYear();
+        document.getElementById('currentDate').innerText = `${day} / ${month} / ${year}`;
+    </script>
+</body>
+
+</html>
