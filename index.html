@@ -3,205 +3,462 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شهادة تقدير وتفوق - Pearson BTEC</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>الدليل العالمي المفصل للنشاط الثالث (Learning Aim C) - BTEC IT Unit 2</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
          :root {
-            --primary-gold: #c59b27;
-            --secondary-gold: #e5c158;
-            --dark-blue: #0f172a;
-            --border-color: #c59b27;
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --accent-primary: #10b981;
+            --accent-primary-light: rgba(16, 185, 129, 0.15);
+            --accent-secondary: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-gold: #f59e0b;
+            --accent-red: #ef4444;
+            --text-title: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --border-highlight: rgba(139, 92, 246, 0.4);
+            --code-bg: #090d16;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f1f5f9;
-            padding: 30px 0;
-        }
-        
-        .certificate-container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .certificate-border {
-            border: 3px solid var(--border-color);
-            padding: 30px;
-            position: relative;
-            background: radial-gradient(circle, #ffffff 85%, #fffdf5 100%);
-            transition: border-color 0.3s ease;
-        }
-        
-        .certificate-inner-border {
-            border: 1px solid var(--border-color);
-            padding: 35px 25px;
-            position: relative;
-            transition: border-color 0.3s ease;
-        }
-        
-        .corner-decoration {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            font-size: 1.4rem;
-            color: var(--border-color);
-            line-height: 1;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.3s ease;
-        }
-        
-        .top-left {
-            top: 6px;
-            left: 6px;
-        }
-        
-        .top-right {
-            top: 6px;
-            right: 6px;
-        }
-        
-        .bottom-left {
-            bottom: 6px;
-            left: 6px;
-        }
-        
-        .bottom-right {
-            bottom: 6px;
-            right: 6px;
-        }
-        
-        .certificate-header {
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .cert-title {
-            font-family: 'Amiri', serif;
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-            margin-bottom: 0;
-            line-height: 1.2;
-        }
-        
-        .cert-subtitle {
-            color: var(--border-color);
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 0.95rem;
-            margin-top: 5px;
-            transition: color 0.3s ease;
-        }
-        
-        .student-input-section {
-            text-align: center;
-            margin: 20px 0 25px 0;
-        }
-        
-        .student-name-display {
-            font-family: 'Amiri', serif;
-            font-size: 2.7rem;
-            font-weight: 700;
-            color: var(--border-color);
-            border-bottom: 2px solid var(--border-color);
-            display: inline-block;
-            padding: 0 35px 5px 35px;
-            min-width: 300px;
-            transition: color 0.3s ease, border-color 0.3s ease;
-        }
-        
-        .cert-body {
-            text-align: center;
-            font-size: 1.15rem;
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
             line-height: 1.9;
-            color: #334155;
-            margin-bottom: 25px;
+            direction: rtl;
+            padding: 12px 12px 50px 12px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         
-        .target-box {
-            background-color: #fefce8;
-            border: 1px dashed var(--border-color);
-            border-radius: 8px;
-            padding: 12px 20px;
-            margin: 15px auto;
-            max-width: 720px;
-            font-size: 1.05rem;
-            color: #713f12;
-            text-align: center;
-            transition: border-color 0.3s ease;
+        @media (min-width: 640px) {
+            body {
+                padding: 24px 24px 60px 24px;
+            }
+        }
+        /* App Header */
+        
+        .app-header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--accent-purple);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
         }
         
-        .en-text {
-            display: block;
-            direction: ltr;
-            unicode-bidi: embed;
-            font-family: Arial, sans-serif;
-            font-size: 0.95rem;
-            margin-top: 4px;
-            color: #854d0e;
-        }
-        
-        .grade-badge-container {
-            text-align: center;
-            margin: 20px 0 10px 0;
-        }
-        
-        .cert-footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #f1f5f9;
-        }
-        
-        .signature-title {
-            font-size: 0.9rem;
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        .signature-name {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--dark-blue);
-        }
-        
-        .seal-badge {
-            width: 65px;
-            height: 65px;
-            background: var(--border-color);
-            color: white;
-            border-radius: 50%;
+        .header-top {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            font-size: 1.4rem;
-            border: 2px solid #ffffff;
-            transition: background-color 0.3s ease;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
         }
+        
+        .badge-unit {
+            background-color: rgba(139, 92, 246, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .badges-criteria {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .badge-cr {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+        
+        .badge-pass {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .badge-merit {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c084fc;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .badge-dist {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .app-header h1 {
+            color: var(--text-title);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        @media (min-width: 640px) {
+            .app-header h1 {
+                font-size: 1.9rem;
+            }
+        }
+        
+        .app-header p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+        /* Teacher & Ministry Meta Banner */
+        
+        .teacher-meta-bar {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.85rem;
+        }
+        
+        .teacher-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-body);
+        }
+        
+        .teacher-meta-item strong {
+            color: var(--accent-purple);
+        }
+        /* Navigation Quick Jump Tabs */
+        
+        .quick-nav {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-purple) var(--bg-card);
+        }
+        
+        .quick-nav::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .quick-nav::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 4px;
+        }
+        
+        .nav-chip {
+            background-color: var(--bg-card);
+            color: var(--text-body);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-chip:hover,
+        .nav-chip:active {
+            background-color: var(--accent-purple);
+            color: #fff;
+            border-color: var(--accent-purple);
+        }
+        /* Section Container */
+        
+        .section-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow-card);
+        }
+        
+        @media (min-width: 640px) {
+            .section-card {
+                padding: 28px;
+            }
+        }
+        
+        .section-title {
+            color: var(--text-title);
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-title i {
+            color: var(--accent-purple);
+            font-size: 1.3rem;
+        }
+        /* Ministry Directives Box */
+        
+        .ministry-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .ministry-title {
+            color: #c084fc;
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .deep-text {
+            font-size: 0.93rem;
+            color: var(--text-body);
+            line-height: 1.9;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+        /* Step-by-Step Cards */
+        
+        .step-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+        
+        .step-box-title {
+            color: var(--accent-secondary);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Example / Case Study Cards */
+        
+        .example-box {
+            background: rgba(15, 23, 42, 0.8);
+            border-left: 4px solid var(--accent-primary);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 14px 0;
+        }
+        
+        .example-title {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* Tables */
+        
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            margin-top: 14px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.87rem;
+            min-width: 650px;
+        }
+        
+        th {
+            background-color: #0f172a;
+            color: var(--accent-purple);
+            padding: 12px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-body);
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        /* Interactive Checklist */
+        
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background 0.2s ease;
+        }
+        
+        .check-item:hover {
+            background: rgba(51, 65, 85, 0.5);
+        }
+        
+        .check-item input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-muted);
+            border-radius: 4px;
+            margin-top: 3px;
+            outline: none;
+            cursor: pointer;
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .check-item input[type="checkbox"]:checked {
+            background-color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+        
+        .check-item input[type="checkbox"]:checked::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #ffffff;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .check-item input[type="checkbox"]:checked+.check-text {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+        
+        .check-text {
+            font-size: 0.9rem;
+            color: var(--text-title);
+            line-height: 1.6;
+        }
+        
+        .progress-bar-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-secondary), var(--accent-purple));
+            transition: width 0.3s ease;
+        }
+        
+        .progress-status {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        /* Print Override */
         
         @media print {
-            .no-print {
-                display: none !important;
-            }
             body {
-                background-color: white;
-                padding: 0;
+                background-color: #ffffff !important;
+                color: #000000 !important;
             }
-            .certificate-container {
-                box-shadow: none;
-                padding: 0;
+            .section-card,
+            .app-header,
+            .step-box,
+            .example-box,
+            .ministry-box {
+                background: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #000 !important;
+                box-shadow: none !important;
+            }
+            .app-header h1,
+            .section-title,
+            .ministry-title {
+                color: #000 !important;
+            }
+            .quick-nav {
+                display: none !important;
             }
         }
     </style>
@@ -209,215 +466,205 @@
 
 <body>
 
-    <!-- شريط أدوات التحكم والخيارات -->
-    <div class="container no-print mb-4" style="max-width: 900px;">
-        <div class="card p-3 shadow-sm border-0">
-            <div class="row g-3">
-
-                <!-- اسم الطالبة -->
-                <div class="col-md-6">
-                    <label class="form-label fw-bold">اسم الطالبة:</label>
-                    <input type="text" class="form-control" id="studentNameInput" placeholder="اكتب اسم الطالبة..." value="اسم الطالبة" oninput="updateCertificate()">
-                </div>
-
-                <!-- اختيار الهدف التعليمي -->
-                <div class="col-md-6">
-                    <label class="form-label fw-bold">هدف التعلم (Learning Aim):</label>
-                    <select class="form-select" id="aimSelect" onchange="updateCertificate()">
-                        <option value="A" selected>أ) فهم دور البيانات والمعلومات في المؤسسات</option>
-                        <option value="B">ب) إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات</option>
-                        <option value="C">ج) راجع فعالية لوحة المعلومات لتوفير المعلومات</option>
-                    </select>
-                </div>
-
-                <!-- اختيار الصفة (مدرس / معلمة) -->
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">صفة المقدم:</label>
-                    <select class="form-select" id="roleSelect" onchange="updateCertificate()">
-                        <option value="مدرس المادة" selected>مدرس المادة</option>
-                        <option value="معلمة المادة">معلمة المادة</option>
-                    </select>
-                </div>
-
-                <!-- اسم المدرس/المعلمة -->
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">اسم المدرس / المعلمة:</label>
-                    <input type="text" class="form-control" id="teacherNameInput" placeholder="اكتب الاسم هنا..." value="المهندس إبراهيم المدادحه" oninput="updateCertificate()">
-                </div>
-
-                <!-- اختيار الدرجة المعيارية -->
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">الدرجة والمعيار:</label>
-                    <select class="form-select" id="gradeSelect" onchange="updateCertificate()">
-                        <option value="D" selected>D - امتياز (Distinction)</option>
-                        <option value="M">M - تفوق (Merit)</option>
-                        <option value="P">P - نجاح (Pass)</option>
-                        <option value="U">U - راسب (Unclassified)</option>
-                    </select>
-                </div>
-
-                <!-- اختيار لون الإطار -->
-                <div class="col-md-3">
-                    <label class="form-label fw-bold">لون الإطار والتزيين:</label>
-                    <div class="d-flex align-items-center gap-2">
-                        <input type="color" class="form-control form-control-color w-100" id="borderColorInput" value="#c59b27" title="اختر لون الإطار" onchange="updateCertificate()">
-                    </div>
-                </div>
-
-                <!-- زر الطباعة -->
-                <div class="col-12 text-end mt-3">
-                    <button onclick="window.print()" class="btn btn-success btn-lg fw-bold px-4">
-                        طباعة / حفظ PDF
-                    </button>
-                </div>
-
+    <!-- Header Section -->
+    <header class="app-header">
+        <div class="header-top">
+            <div class="badge-unit"><i class="fa-solid fa-chart-line"></i> BTEC IT Level 2 - Unit 2 (Learning Aim C)</div>
+            <div class="badges-criteria">
+                <span class="badge-cr badge-pass">C.P4</span>
+                <span class="badge-cr badge-merit">C.M4</span>
+                <span class="badge-cr badge-dist">C.D3</span>
             </div>
         </div>
-    </div>
+        <h1>الدليل المفصل خطوة بخطوة للنشاط الثالث (Activity 3)</h1>
+        <p>دليل الطالبة الشامل من الصفر لكتابة تقرير المراجعة والتقييم لمؤسسة (GreenCycle International)</p>
 
-    <!-- قالب الشهادة -->
-    <div class="certificate-container">
-        <div class="certificate-border" id="certBorder">
-            <div class="certificate-inner-border">
-
-                <!-- الزخارف الركنية -->
-                <div class="corner-decoration top-left">❖</div>
-                <div class="corner-decoration top-right">❖</div>
-                <div class="corner-decoration bottom-left">❖</div>
-                <div class="corner-decoration bottom-right">❖</div>
-
-                <!-- Header -->
-                <div class="certificate-header">
-                    <h1 class="cert-title">شهادة تقدير وتفوق</h1>
-                    <p class="cert-subtitle mb-0">CERTIFICATE OF EXCELLENCE</p>
-                </div>
-
-                <!-- Content -->
-                <div class="cert-body">
-                    <p class="mb-1">تُمنح هذه الشهادة ببالغ الفخر والاعتزاز للطالبة المتميزة:</p>
-
-                    <div class="student-input-section">
-                        <span class="student-name-display" id="displayName">اسم الطالبة</span>
-                    </div>
-
-                    <p class="mb-2">
-                        تقديراً لجهودها الاستثنائية وتفوقها واجتيازها بنجاح واقتدار لكافة متطلبات المهمة لـ:
-                    </p>
-
-                    <!-- صندوق الهدف التعليمي -->
-                    <div class="target-box">
-                        <strong class="fw-bold" id="targetTitle">هدف التعلم (أ) - Learning Aim A</strong>
-                        <div class="mt-1" id="targetDescAr">فهم دور البيانات والمعلومات في المؤسسات</div>
-                        <span class="en-text" id="targetDescEn">(Understand how data and information are used by organisations)</span>
-                    </div>
-
-                    <p class="mb-0">
-                        متمنين لها دوام التوفيق والتميز العلمي والمهني.
-                    </p>
-
-                    <!-- شارة الدرجة والمعيار -->
-                    <div class="grade-badge-container">
-                        <span id="gradeBadge" class="badge fs-6 px-4 py-2 bg-warning text-dark fw-bold">
-                            التقدير: امتياز (D - Distinction)
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Footer & Signatures -->
-                <div class="cert-footer">
-                    <div class="row align-items-center text-center">
-
-                        <div class="col-4">
-                            <p class="signature-title mb-1" id="displayRoleHeader">مقدمة من مدرس المادة</p>
-                            <p class="signature-name mb-0" id="displayTeacherName">المهندس إبراهيم المدادحه</p>
-                            <small class="text-muted">BTEC Instructor</small>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="seal-badge">
-                                ❖
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <p class="signature-title mb-1">التاريخ</p>
-                            <p class="signature-name mb-0" id="currentDate"></p>
-                            <small class="text-muted">BTEC IT Department</small>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+        <div class="teacher-meta-bar">
+            <div class="teacher-meta-item"><i class="fa-solid fa-chalkboard-user"></i> المقيم / المعلمة: <strong>أ. نسرين قنديل</strong></div>
+            <div class="teacher-meta-item"><i class="fa-solid fa-school"></i> المدرسة: <strong>رابعة العدوية الثانوية للبنات</strong></div>
+            <div class="teacher-meta-item"><i class="fa-solid fa-user-graduate"></i> الصف: <strong>العاشر IT</strong></div>
+            <div class="teacher-meta-item"><i class="fa-solid fa-building-columns"></i> الجهة المصدرة: <strong>وزارة التربية والتعليم - إدارة التعليم المهني</strong></div>
         </div>
+    </header>
+
+    <!-- Ministry Directives Card -->
+    <div class="ministry-box">
+        <div class="ministry-title"><i class="fa-solid fa-book-open"></i> توجيهات أستاذة المادة (أ. نسرين قنديل) لفهم الواجب من الصفر:</div>
+        <p class="deep-text" style="margin-bottom: 0; color: #e2e8f0;">
+            عزيزتي الطالبة، لكي نبدأ حل النشاط الثالث (Activity 3) بطريقة صحيحة ومثالية، يجب أن نفهم أولاً أننا سنكتب تقرير مراجعة مستقل في ملف Word (باستخدام خط <code>Simplified Arabic</code> بحجم 14 للعناوين و12 للنص الأساسي). دورك هنا ليس برمجياً في
+            إكسل، بل هو <strong>تحليلي واستراتيجي</strong>؛ حيث تخاطبين الإدارة العليا في شركة <em>GreenCycle</em> لتثبتي لهم كيف أن لوحة المعلومات التي أنشأتها ساعدت في فهم البيانات واستخلاص القرارات بدقة. سنشرح لك أدناه تفصيل كل معيار وكيف تكتبين إجابته
+            خطوة بخطوة من الصفر.
+        </p>
     </div>
 
+    <!-- Quick Navigation Bar -->
+    <nav class="quick-nav" aria-label="روابط سريعة">
+        <a href="#how-to-start" class="nav-chip"><i class="fa-solid fa-play"></i> من الصفر: كيف أبدأ؟</a>
+        <a href="#criteria-p4" class="nav-chip"><i class="fa-solid fa-circle-check"></i> تفصيل معيار C.P4</a>
+        <a href="#criteria-m4" class="nav-chip"><i class="fa-solid fa-star"></i> تفصيل معيار C.M4</a>
+        <a href="#criteria-d3" class="nav-chip"><i class="fa-solid fa-trophy"></i> تفصيل معيار C.D3</a>
+        <a href="#checklist" class="nav-chip"><i class="fa-solid fa-square-check"></i> قائمة التحقق النهائية</a>
+    </nav>
+
+    <!-- SECTION 1: How to Start from Zero -->
+    <section id="how-to-start" class="section-card">
+        <div class="section-title">
+            <i class="fa-solid fa-list-ol"></i>
+            <span>1. من الصفر: كيف أبدأ كتابة تقرير النشاط الثالث؟</span>
+        </div>
+        <p class="deep-text">
+            لضمان عدم التشتت، اتبعي هذه الخطوات الأربع بالتسلسل عند فتح مستند الوورد الجديد:
+        </p>
+
+        <div class="step-box">
+            <div class="step-box-title"><i class="fa-solid fa-1"></i> الخطوة الأولى: تجهيز الغلاف والهيكلة</div>
+            <p style="font-size: 0.9rem; margin: 0;">أنشئي صفحة غلاف تحتوي على اسمك، رقم التسجيل في الإدكسل، اسم الوحدة (الوحدة 2 - نمذجة البيانات)، واسم المعلمة (أ. نسرين قنديل)، ثم أدرجي صفحة للفهرس والمحتويات.</p>
+        </div>
+
+        <div class="step-box">
+            <div class="step-box-title"><i class="fa-solid fa-2"></i> الخطوة الثانية: تقسيم التقرير إلى أقسام بمعايير البيرسون</div>
+            <p style="font-size: 0.9rem; margin: 0;">اجعلي عنوان كل قسم في تقريرك يتطابق مع متطلبات المعايير (القسم الأول يشرح اللوحة C.P4، القسم الثاني يقيم فاعليتها C.M4، والقسم الثالث يستخرج الاتجاهات والحالات الشاذة C.D3).</p>
+        </div>
+
+        <div class="step-box">
+            <div class="step-box-title"><i class="fa-solid fa-3"></i> الخطوة الثالثة: صياغة الأفكار بلغتك الخاصة</div>
+            <p style="font-size: 0.9rem; margin: 0;">امتنعي تماماً عن النسخ واللصق من الإنترنت أو الذكاء الاصطناعي، واشرحي بلفتتك الخاصة مستعانة بالصور المصغرة من لوحة المعلومات التي صممتِها في النشاط الثاني كأدلة إثبات.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Deep Dive into C.P4 -->
+    <section id="criteria-p4" class="section-card">
+        <div class="section-title" style="color: #60a5fa;">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>2. العمق والتحليل في معيار النجاح (C.P4): شرح كيفية عرض لوحة المعلومات</span>
+        </div>
+        <p class="deep-text">
+            <strong>المطلوب بأسلوب مبسط:</strong> تخيلي أنك تشرحين لشخص لم يَر قط لوحة المعلومات الخاصة بك. في هذا القسم، عليكِ وصف كل جزء ظاهر على شاشة الـ <code>Dashboard</code> بالتفصيل المُمِل والمفيد.
+        </p>
+
+        <div class="step-box">
+            <div class="step-box-title" style="color: #60a5fa;"><i class="fa-solid fa-circle-dot"></i> نقاط أساسية يجب كتابتها في C.P4:</div>
+            <ul style="padding-right: 20px; line-height: 1.8; font-size: 0.9rem;" class="text-slate-300">
+                <li><strong>شرح تصميم الشاشة:</strong> اذكري كيف تم ترتيب الأزرار والمخططات، ولماذا اخترتِ الألوان الداكنة أو المتناسقة لتكون مريحة لعين المدير.</li>
+                <li><strong>شرح المخططات المستخدمة:</strong> تحدثي عن المخطط العمودي (الذي يوضح التبرعات لكل مدينة) والمخطط الدائري (الذي يوضح نسب المتسابقين Solo و Pair).</li>
+                <li><strong>شرح شرائح التصفية (Slicers):</strong> بيني كيف يمكن للمستخدم النقر على اسم مدينة معينة لتتغير كافة الأرقام أمامها في ثوانٍ معدودة.</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <div class="example-title"><i class="fa-solid fa-lightbulb"></i> نموذج صياغة مقترح للطالبة (C.P4):</div>
+            <p style="font-size: 0.88rem; color: var(--text-body); margin: 0;">
+                <em>"قمت بتصميم لوحة المعلومات (Dashboard) لتكون واجهة تفاعلية رئيسية لمؤسسة GreenCycle. تحتوي اللوحة على بطاقات بارزة (KPI Cards) تعرض إجمالي الأشجار المزروعة والأموال المجمعة بخط واضح. كما أضفت شرائح تصفية (Slicers) تتيح للمدير اختيار المدينة الحضرية المطلوبة، مما يؤدي إلى تحديث المخططات العمودية والدائرية تلقائياً وعرض بيانات تلك المدينة فقط دون الحاجة للبحث اليدوي الطويل."</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Deep Dive into C.M4 -->
+    <section id="criteria-m4" class="section-card">
+        <div class="section-title" style="color: #c084fc;">
+            <i class="fa-solid fa-star"></i>
+            <span>3. العمق والتحليل في معيار التفوق (C.M4): تقييم فاعلية لوحة المعلومات</span>
+        </div>
+        <p class="deep-text">
+            <strong>المطلوب بأسلوب مبسط:</strong> بعد أن شرحتِ كيف تعمل اللوحة في C.P4، يأتي الدور الآن على **إصدار حكم تقييمي نقدي**. هل هذه اللوحة ممتازة حقاً؟ ما هي مزاياها وما هي عيوبها أو حدودها؟
+        </p>
+
+        <div class="step-box">
+            <div class="step-box-title" style="color: #c084fc;"><i class="fa-solid fa-circle-dot"></i> نقاط أساسية يجب كتابتها في C.M4:</div>
+            <ul style="padding-right: 20px; line-height: 1.8; font-size: 0.9rem;" class="text-slate-300">
+                <li><strong>تقييم سهولة الاستخدام:</strong> هل تستطيع الإدارة فهم النتائج خلال ثوانٍ معدودة دون خبرة تقنية عميقة؟ (نعم، لأن المخططات بصرية).</li>
+                <li><strong>سرعة اتخاذ القرار:</strong> كيف ساعدت اللوحة في معرفة أي المدن أنجزت مهام بيئية أكبر لتوجيه الدعم المالي لها في مسابقات العام القادم 2027.</li>
+                <li><strong>تحديد نقاط التحسين (العيوب البسيطة):</strong> اذكري لو أن بيانات المتسابقين تجاوزت الآلاف، ربما تحتاج اللوحة إلى فلاتر أعمق لئلا تتداخل ألوان المخططات الدائرية.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Deep Dive into C.D3 -->
+    <section id="criteria-d3" class="section-card">
+        <div class="section-title" style="color: #fbbf24;">
+            <i class="fa-solid fa-trophy"></i>
+            <span>4. العمق والتحليل في معيار الامتياز (C.D3): استخراج الاتجاهات، الأنماط، والحالات الشاذة</span>
+        </div>
+        <p class="deep-text">
+            <strong>المطلوب بأسلوب مبسط:</strong> هذا هو المعيار الأهم للتميز! هنا لا تقولي كلاماً عاماً، بل استخدمي **أرقاماً حقيقية من ملف بيانات المسابقة** لتثبتي للمقيم أنكِ استخرجتِ أسرار البيانات واستنتاجات استراتيجية قوية. يجب أن يتضمن تقريرك ثلاثة
+            عناوين رئيسية واضحة:
+        </p>
+
+        <div class="step-box" style="margin-bottom: 12px;">
+            <div class="step-box-title" style="color: #fbbf24;"><i class="fa-solid fa-chart-line"></i> أ. تحليل الاتجاهات (Trends):</div>
+            <p style="font-size: 0.9rem; margin: 0;">ابحثي عن التغير المستمر بمرور الوقت أو المسافة. <em>مثال:</em> هل لوحظ أن الفرق التي تشارك بفئة (Pair) تسجل أزمنة ركوب دراجات أسرع وفي نفس الوقت تزرع أشجاراً أكثر مقارنة بالفئات الفردية (Solo)؟ فسري لماذا يحدث ذلك (توزيع الجهد الجماعي).</p>
+        </div>
+
+        <div class="step-box" style="margin-bottom: 12px;">
+            <div class="step-box-title" style="color: #fbbf24;"><i class="fa-solid fa-shapes"></i> ب. تحديد الأنماط المتكررة (Patterns):</div>
+            <p style="font-size: 0.9rem; margin: 0;">ابحثي عن السلوكيات المتشابهة. <em>مثال:</em> يظهر من خلال اللوحة نمط ثابت يفيد بأن المدن الكبرى التي تحوي بنية تحتية أفضل تسجل دائماً أعلى عقود رعاية مالية مقارنة بالمدن الفرعية، مما يعكس تأثير الموقع الجغرافي على التبرعات.</p>
+        </div>
+
+        <div class="step-box">
+            <div class="step-box-title" style="color: #fbbf24;"><i class="fa-solid fa-triangle-exclamation"></i> ج. اكتشاف الحالات الشاذة (Anomalies):</div>
+            <p style="font-size: 0.9rem; margin: 0;">ابحثي عن الرقم الغريب أو المستثنى الذي يخالف القاعدة. <em>مثال:</em> متسابق معين سجل أبطأ زمن إجمالي في إكمال المراحل الخمس (بسبب عطل دراجته أو تعبه)، ورغم ذلك تفوق على الجميع في كمية النفايات المجمعة والأشجار المزروعة، مما يدل على التزامه
+                البيئي العالي رغم التأخر الزمني.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Interactive Checklist -->
+    <section id="checklist" class="section-card">
+        <div class="section-title">
+            <i class="fa-solid fa-list-check"></i>
+            <span>5. قائمة التحقق النهائية للطالبة لضمان العلامة الكاملة</span>
+        </div>
+
+        <div class="progress-status">
+            <span>نسبة إنجاز تقرير النشاط الثالث:</span>
+            <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="checklist-group">
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">فتح ملف Word وتطبيق خط Simplified Arabic (حجم 14 للعناوين و12 للنص الأساسي).</span>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">إضافة صفحة الغلاف الرسمية متضمنة اسم الطالبة، رقم التسجيل، واسم المعلمة (أ. نسرين قنديل).</span>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">كتابة قسم شرح لوحة المعلومات وتفصيل المخططات والشرائح لاستيفاء معيار C.P4.</span>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">كتابة قسم التقييم النقدي وتوضيح نقاط القوة والفاعلية في اتخاذ القرار لاستيفاء معيار C.M4.</span>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">تحليل واكتشاف الاتجاهات، الأنماط، والحالات الشاذة مدعومة بأرقام حقيقية لاستيفاء معيار C.D3.</span>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" onchange="updateProgress()">
+                <span class="check-text">مراجعة خلو التقرير من أي نسخ ولصق (Copy & Paste) لضمان اجتياز فحص الانتحال بنجاح تام.</span>
+            </label>
+        </div>
+    </section>
+
+    <!-- Script for Interactivity -->
     <script>
-        const aimData = {
-            "A": {
-                title: "هدف التعلم (أ) - Learning Aim A",
-                ar: "فهم دور البيانات والمعلومات في المؤسسات",
-                en: "(Understand how data and information are used by organisations)"
-            },
-            "B": {
-                title: "هدف التعلم (ب) - Learning Aim B",
-                ar: "إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات",
-                en: "(Create a dashboard using data processing techniques)"
-            },
-            "C": {
-                title: "هدف التعلم (ج) - Learning Aim C",
-                ar: "راجع فعالية لوحة المعلومات لتوفير المعلومات",
-                en: "(Review the effectiveness of the dashboard in providing information)"
-            }
-        };
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.check-item input[type="checkbox"]');
+            const total = checkboxes.length;
+            let checked = 0;
 
-        function updateCertificate() {
-            // 1. تحديث اسم الطالبة
-            let nameInput = document.getElementById('studentNameInput').value;
-            document.getElementById('displayName').innerText = nameInput.trim() !== "" ? nameInput : "اسم الطالبة";
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+            });
 
-            // 2. تحديث الهدف التعليمي
-            let selectedAim = document.getElementById('aimSelect').value;
-            document.getElementById('targetTitle').innerText = aimData[selectedAim].title;
-            document.getElementById('targetDescAr').innerText = aimData[selectedAim].ar;
-            document.getElementById('targetDescEn').innerText = aimData[selectedAim].en;
-
-            // 3. تحديث الصفة واسم المدرس/المعلمة
-            let roleSelect = document.getElementById('roleSelect').value;
-            document.getElementById('displayRoleHeader').innerText = "مقدمة من " + roleSelect;
-
-            let teacherInput = document.getElementById('teacherNameInput').value;
-            document.getElementById('displayTeacherName').innerText = teacherInput.trim() !== "" ? teacherInput : "الاسم";
-
-            // 4. تحديث الدرجة المعيارية (D / M / P / U)
-            let gradeSelect = document.getElementById('gradeSelect').value;
-            let badge = document.getElementById('gradeBadge');
-
-            if (gradeSelect === 'D') {
-                badge.className = 'badge fs-6 px-4 py-2 bg-warning text-dark fw-bold';
-                badge.innerText = 'التقدير: امتياز (D - Distinction)';
-            } else if (gradeSelect === 'M') {
-                badge.className = 'badge fs-6 px-4 py-2 bg-primary text-white fw-bold';
-                badge.innerText = 'التقدير: تفوق (M - Merit)';
-            } else if (gradeSelect === 'P') {
-                badge.className = 'badge fs-6 px-4 py-2 bg-success text-white fw-bold';
-                badge.innerText = 'التقدير: نجاح (P - Pass)';
-            } else if (gradeSelect === 'U') {
-                badge.className = 'badge fs-6 px-4 py-2 bg-danger text-white fw-bold';
-                badge.innerText = 'التقدير: راسب (U - Unclassified)';
-            }
-
-            // 5. تحديث لون الإطار والعناصر التزيينية
-            let selectedColor = document.getElementById('borderColorInput').value;
-            document.documentElement.style.setProperty('--border-color', selectedColor);
+            const percentage = Math.round((checked / total) * 100);
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressPercent').innerText = percentage + '%';
         }
-
-        // كتابة التاريخ تلقائياً
-        let today = new Date();
-        let day = String(today.getDate()).padStart(2, '0');
-        let month = String(today.getMonth() + 1).padStart(2, '0');
-        let year = today.getFullYear();
-        document.getElementById('currentDate').innerText = `${day} / ${month} / ${year}`;
     </script>
 </body>
 
